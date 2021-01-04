@@ -19,7 +19,29 @@ xui.Class('App', 'xui.Module',{
         iniComponents : function(){
             // [[Code created by CrossUI RAD Studio
             var host=this, children=[], append=function(child){children.push(child.get(0));};
-
+            
+            append(
+                xui.create("xui.UI.Input")
+                .setHost(host,"xui_ui_input5")
+                .setDirtyMark(false)
+                .setLeft("11.428571428571429em")
+                .setTop("4.571428571428571em")
+                .setWidth("18em")
+                .setHeight("10em")
+                .setLabelSize("8em")
+                .setLabelCaption("Text Area")
+                .setMultiLines(true)
+                .onChange([
+                    {
+                        "desc":"Action 1",
+                        "type":"other",
+                        "target":"url",
+                        "args":[ ],
+                        "method":"close"
+                    }
+                ])
+            );
+            
             return children;
             // ]]Code created by CrossUI RAD Studio
         },
@@ -28,6 +50,8 @@ xui.Class('App', 'xui.Module',{
         customAppend : function(parent, subId, left, top){
             // "return false" will cause all the internal UI controls will be added to the parent panel
             return false;
+        },
+        events:{
         }
         /*,
         // To determine how properties affects this module
